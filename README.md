@@ -1,3 +1,3 @@
 # Atmosphère
 
-Sacha Dodane et Dimitri Walczack
+Sacha Dodane et Dimitri Walczak
