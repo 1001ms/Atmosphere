@@ -94,17 +94,16 @@ function getAirQuality($lat, $lon) {
 
 // Fonction pour récupérer l'adresse IP publique
 function getPublicIP() {
-    $url = "https://api64.ipify.org?format=json";
-    $response = safe_file_get_contents($url);
-    $data = $response ? json_decode($response, true) : null;
-    return $data['ip'] ?? null;
+    return $_SERVER['REMOTE_ADDR'] ?? null;
 }
+
 
 // Obtention de l'adresse IP publique
 $ip = getPublicIP();
-if (!$ip) {
-    die("Erreur : Impossible de récupérer l'adresse IP publique.");
+if (!$ip || $ip === '::1') {
+    $ip = '127.0.0.1';
 }
+
 
 // Géolocalisation de l'IP
 $geoData = geolocalisationIP($ip);
