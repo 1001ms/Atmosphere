@@ -117,7 +117,7 @@ function ajouterMarqueurParAdresse(map) {
 
 // Fonction pour récupérer et afficher les incidents de circulation
 function afficherIncidents(map) {
-    const apiUrl = 'index.php?wazeTraffic=true';
+    const apiUrl = 'atmosphere.php?wazeTraffic=true';
 
     fetch(apiUrl)
         .then(response => {
